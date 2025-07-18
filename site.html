@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes de Ensaio de Natal 2025 – Madrugafilm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Elegant Winter Serenity (Muted Blues, Grays, Creams, with subtle Gold/Silver accents) -->
+    <!-- Application Structure Plan: The application maintains a single-page, top-to-bottom flow. It begins with an elegant header, followed by a detailed comparison table for a clear, side-by-side overview of package features. Below this, individual package details are presented in a responsive card grid for easy scanning, now including comprehensive payment options. New sections for general payment methods and detailed terms and conditions are added at the bottom, ensuring all client queries are addressed within a single, navigable page. This structure prioritizes clear information hierarchy and user self-service. -->
+    <!-- Visualization & Content Choices: 1. Package Comparison: Report Info -> Package Prices, Photo quantities, Duration, Prints, Video, Santa presence. Goal -> Compare all key features directly. Viz/Presentation -> Responsive HTML Table. Interaction -> Direct side-by-side reading. Justification -> A table offers the clearest and most direct comparison of multiple attributes across different packages. Method -> HTML/CSS/Tailwind. 2. Package Details: Report Info -> All features for each of the 4 packages, including detailed payment plans and specific inclusions/exclusions. Goal -> Inform comprehensively. Viz/Presentation -> 4 styled cards in a responsive grid using HTML/Tailwind, with Unicode icons for key features and a dedicated payment sub-section. Interaction -> Subtle hover effects on cards. Justification -> Cards are highly scannable and ideal for presenting discrete blocks of information, now enhanced with critical financial details. Method -> HTML/CSS/Tailwind. 3. Payment Methods & Terms: Report Info -> General payment options, delivery, extra photos, duration, cancellations, pet policy, image usage, reservations. Goal -> Provide essential logistical and contractual information. Viz/Presentation -> Structured text sections with clear headings and bullet points. Interaction -> None (informational). Justification -> Clear, concise text is best for legal/procedural information. Method -> HTML/CSS/Tailwind. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F8F8; 
+            color: #333333;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; 
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        th {
+            background-color: #F0F0F0;
+            font-weight: 700;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .header-bg-image {
+            background-image: url('https://images.unsplash.com/photo-1577909337438-662235952d92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjaHJpc3RtYXMlMjBib2xscyUyMGJhY2tncm91bmQlMjBibHVycnl8ZW58MHx8fHwxNzIwOTM2Nzk4fDA&ixlib=rb-4.0.3&q=80&w=1200'); /* Imagem de bolas de Natal desfocadas */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="text-stone-800">
+
+    <header class="text-center py-16 px-4 bg-gradient-to-b from-blue-50 to-white header-bg-image relative">
+        <div class="absolute inset-0 bg-white opacity-80"></div> <!-- Camada de opacidade para desfocar levemente o fundo -->
+        <div class="relative z-10">
+            <h1 class="font-playfair text-5xl md:text-6xl text-gray-800 leading-tight">Ensaio de Natal 2025</h1>
+            <p class="text-xl md:text-2xl mt-2 text-gray-600">por <span class="font-bold">Madrugafilm</span></p>
+            <p class="max-w-3xl mx-auto mt-8 text-base md:text-lg text-gray-700">
+                Celebre a época mais encantadora do ano com ensaios fotográficos que eternizam a alegria e o amor da sua família. Descubra nossos pacotes exclusivos para um Natal inesquecível.
+            </p>
+            <p class="max-w-3xl mx-auto mt-4 text-base md:text-lg text-gray-700 font-semibold">
+                Todos os pacotes são para <span class="text-indigo-600">até 5 pessoas</span>.
+            </p>
+            <p class="max-w-3xl mx-auto mt-2 text-base md:text-lg text-gray-700">
+                Boa notícia para quem tem pet: eles são super bem-vindos no nosso estúdio e sem custo extra! 🐾
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <section id="comparison" class="text-center mb-20">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Compare Nossos Pacotes</h2>
+            <p class="max-w-3xl mx-auto mb-10 text-lg text-gray-700">
+                Para uma escolha fácil e informada, veja uma comparação detalhada de cada pacote. Encontre a opção perfeita que se encaixa nos seus desejos para este Natal.
+            </p>
+            <div class="table-container rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pacote</th>
+                            <th>Valor</th>
+                            <th>Fotos Digitais</th>
+                            <th>Duração</th>
+                            <th>Pessoas</th>
+                            <th>Pets</th>
+                            <th>Fotos Impressas</th>
+                            <th>Vídeo para Reels</th>
+                            <th>Papai Noel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">Essencial</td>
+                            <td>R$ 650,00</td>
+                            <td>20</td>
+                            <td>Até 45 min</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Encanto de Natal</td>
+                            <td>R$ 900,00</td>
+                            <td>35</td>
+                            <td>Até 1 hora</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>3 (15x21)</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Natal Completo</td>
+                            <td>R$ 1.350,00</td>
+                            <td>50</td>
+                            <td>Até 1h30</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>5 (15x21)</td>
+                            <td>Sim (30-60s)</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Pacote com Papai Noel</td>
+                            <td>R$ 1.750,00</td>
+                            <td>50</td>
+                            <td>Até 1h30</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>5 (15x21)</td>
+                            <td>Sim (30-60s)</td>
+                            <td>Sim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="packages" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Detalhes dos Pacotes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-4">📦 Pacote Essencial</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 650,00</p>
+                    <ul class="space-y-3 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start"><span class="mr-3 text-emerald-600">📸</span><span><span class="font-bold">20 fotos</span> digitais.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-emerald-600">⏱️</span><span>Ensaio de até <span class="font-bold">45 minutos</span>.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-emerald-600">🖼️</span><span>Galeria online para seleção.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-emerald-600">✨</span><span>Cenário natalino clássico.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">💰 Pagamento:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Sinal: <span class="font-bold">R$ 150,00</span></li>
+                            <li>Parcelamento: até <span class="font-bold">3x de R$ 166,67</span> sem juros</li>
+                            <li>À vista com 5% de desconto: <span class="font-bold">R$ 617,50</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🎄 Pacote Encanto de Natal</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 900,00</p>
+                    <ul class="space-y-3 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start"><span class="mr-3 text-amber-600">📸</span><span><span class="font-bold">35 fotos</span> digitais.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-amber-600">⏱️</span><span>Ensaio de até <span class="font-bold">1 hora</span>.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-amber-600">📜</span><span><span class="font-bold">3 fotos impressas</span> 15x21.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">💰 Pagamento:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Sinal: <span class="font-bold">R$ 200,00</span></li>
+                            <li>Parcelamento: até <span class="font-bold">5x de R$ 140,00</span> sem juros</li>
+                            <li>À vista com 7% de desconto: <span class="font-bold">R$ 837,00</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-4">🌟 Pacote Natal Completo</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 1.350,00</p>
+                    <ul class="space-y-3 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start"><span class="mr-3 text-rose-600">📸</span><span><span class="font-bold">50 fotos</span> digitais.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-rose-600">⏱️</span><span>Ensaio de até <span class="font-bold">1h30</span>.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-rose-600">📜</span><span><span class="font-bold">5 fotos impressas</span> 15x21.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-rose-600">📹</span><span>Vídeo editado para Reels (30s a 60s).</span></li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">💰 Pagamento:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Sinal: <span class="font-bold">R$ 300,00</span></li>
+                            <li>Parcelamento: até <span class="font-bold">8x de R$ 131,25</span> sem juros</li>
+                            <li>À vista com 10% de desconto: <span class="font-bold">R$ 1.215,00</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-indigo-600 relative ring-4 ring-indigo-300 ring-offset-4">
+                     <span class="absolute top-0 right-0 -mt-4 -mr-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">MAIS MÁGICO</span>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🎅 Pacote com Papai Noel</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 1.750,00</p>
+                    <ul class="space-y-3 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start"><span class="mr-3 text-indigo-600">📸</span><span><span class="font-bold">50 fotos</span> digitais.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-indigo-600">⏱️</span><span>Ensaio de até <span class="font-bold">1h30</span>.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-indigo-600">📜</span><span><span class="font-bold">5 fotos impressas</span> 15x21.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-indigo-600">📹</span><span>Vídeo editado para Reels (30s a 60s).</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-indigo-600">🎅</span><span>Participação especial do Papai Noel.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">💰 Pagamento:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Sinal: <span class="font-bold">R$ 400,00</span></li>
+                            <li>Parcelamento: até <span class="font-bold">8x de R$ 168,75</span> sem juros</li>
+                            <li>Ou até <span class="font-bold">12x no cartão</span> com juros da operadora</li>
+                            <li>À vista com 15% de desconto: <span class="font-bold">R$ 1.487,50</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="payment-methods" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">💳 Formas de Pagamento</h2>
+            <p class="max-w-3xl mx-auto mb-6 text-lg text-gray-700 text-center">
+                Oferecemos diversas opções para facilitar sua reserva e pagamento, garantindo flexibilidade e segurança.
+            </p>
+            <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 border-t-4 border-gray-400">
+                <ul class="space-y-3 text-left text-base text-gray-700">
+                    <li class="flex items-center"><span class="mr-3 text-gray-600">✅</span><span><span class="font-bold">Pix:</span> Pagamento instantâneo e sem taxas.</span></li>
+                    <li class="flex items-center"><span class="mr-3 text-gray-600">✅</span><span><span class="font-bold">Transferência.</span></span></li>
+                    <li class="flex items-center"><span class="mr-3 text-gray-600">✅</span><span><span class="font-bold">Dinheiro:</span> Pagamento em espécie.</span></li>
+                    <li class="flex items-center"><span class="mr-3 text-gray-600">✅</span><span><span class="font-bold">Cartão:</span> Débito/crédito via link de pagamento ou maquininha.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="terms-conditions" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">📌 Termos e Condições – Ensaio de Natal Madrugafilm</h2>
+            <p class="max-w-3xl mx-auto mb-6 text-lg text-gray-700 text-center">
+                Para garantir a melhor experiência e transparência, por favor, leia atentamente nossos termos e condições.
+            </p>
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 border-t-4 border-gray-400 space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">🖼️ Entrega e Seleção das Fotos</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Após o ensaio, você receberá um link para acesso à galeria online em até <span class="font-bold">4 dias úteis</span>.</li>
+                        <li>A partir da seleção das fotos, o prazo de entrega final é de até <span class="font-bold">15 dias úteis</span> com edição completa.</li>
+                        <li>É responsabilidade do cliente nos avisar quando a seleção estiver concluída, para que possamos controlar corretamente os prazos de entrega.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">📷 Fotos Extras</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li><span class="font-bold">R$ 25,00</span> por foto adicional.</li>
+                        <li>A partir de <span class="font-bold">R$ 150,00</span> em fotos extras, você ganha <span class="font-bold">10% de desconto</span> no total das adicionais.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">⏱️ Duração do Ensaio e Horário</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>O tempo de ensaio segue o limite de cada pacote.</li>
+                        <li>Atrasos por parte do cliente podem reduzir o tempo de sessão.</li>
+                        <li>Caso haja tempo excedido, será cobrada uma taxa de <span class="font-bold">R$ 150,00 a cada 15 minutos</span>, conforme disponibilidade na agenda.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">👗 Troca de Roupa</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Recomendamos no máximo <span class="font-bold">uma troca de roupa</span>, para otimizar o ensaio dentro do tempo contratado.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">❌ Cancelamentos e Remarcações</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Cancelamentos com menos de <span class="font-bold">72h</span> não reembolsam o sinal.</li>
+                        <li>Remarcações com no mínimo <span class="font-bold">48h</span> de antecedência, sujeitas à disponibilidade.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">🐶 Pets</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>São bem-vindos, desde que estejam <span class="font-bold">limpos, vacinados e sob controle</span>.</li>
+                        <li>Não nos responsabilizamos por comportamentos ou danos causados pelos animais.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">📢 Uso das Imagens</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>As imagens podem ser usadas pela Madrugafilm para portfólio e redes sociais.</li>
+                        <li>Caso não deseje divulgação, <span class="font-bold">avise no ato da contratação</span>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">🗓️ Reservas</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>A data do ensaio só é confirmada após o <span class="font-bold">pagamento do sinal</span>.</li>
+                        <li>O valor total deve estar quitado <span class="font-bold">até um dia antes do ensaio</span>.</li>
+                        <li>Em caso de parcelamento, o link para pagamento das parcelas será enviado <span class="font-bold">até dois dias antes do ensaio</span>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white text-center py-12 px-4">
+        <h2 class="text-4xl font-bold mb-4">Gostou? Agende seu Ensaio!</h2>
+        <p class="max-w-2xl mx-auto mb-8 text-lg text-gray-300">
+            As vagas para os ensaios de Natal são limitadas. Não deixe para a última hora, garanta já a sua e eternize a magia deste ano!
+        </p>
+        <a href="https://wa.me/5519997834692?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20pacotes%20de%20Natal%20da%20Madrugafilm." target="_blank" class="bg-amber-400 text-gray-900 font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-amber-300 transition-colors duration-300 shadow-lg">
+            📞 Agendar pelo WhatsApp
+        </a>
+        <div class="mt-8">
+            <p class="text-gray-400">Siga-nos no Instagram: <a href="https://www.instagram.com/madrugafilm_" target="_blank" class="font-bold underline hover:text-white">@madrugafilm_</a></p>
+        </div>
+        <div class="mt-12 text-sm text-gray-500">
+            &copy; 2025 Madrugafilm. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
