@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes de Ensaio de Natal 2025 – Madrugafilm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Chosen Palette: Elegant Winter Serenity (Muted Blues, Grays, Creams, with subtle Gold/Silver accents) -->
+    <!-- Application Structure Plan: The application maintains a single-page, top-to-bottom flow. It begins with an elegant header, followed by a detailed comparison table for a clear, side-by-side overview of package features. Below this, individual package details are presented in a responsive card grid for easy scanning. This structure was chosen to provide a direct and comprehensive comparison upfront, followed by more granular information, facilitating user decision-making in a clean, organized manner. The flow concludes with a clear call-to-action. -->
+    <!-- Visualization & Content Choices: 1. Package Comparison: Report Info -> Package Prices, Photo quantities, Duration, Prints, Video, Santa presence. Goal -> Compare all key features directly. Viz/Presentation -> Responsive HTML Table. Interaction -> Direct side-by-side reading. Justification -> A table offers the clearest and most direct comparison of multiple attributes across different packages, fitting a "clean" aesthetic by presenting all data at once without requiring interaction to reveal details. Method -> HTML/CSS/Tailwind. 2. Package Details: Report Info -> All features for each of the 4 packages (excluding 'figurinos'). Goal -> Inform. Viz/Presentation -> 4 styled cards in a responsive grid using HTML/Tailwind, with Unicode icons for key features. Interaction -> Subtle hover effects on cards. Justification -> Cards remain an effective, scannable UI pattern for presenting discrete blocks of information, suitable for all device sizes. Method -> HTML/CSS/Tailwind. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F8F8;
+            color: #333333;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        th {
+            background-color: #F0F0F0;
+            font-weight: 700;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .header-bg-image {
+            background-image: url('https://images.unsplash.com/photo-1577909337438-662235952d92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjaHJpc3RtYXMlMjBib2xscyUyMGJhY2tncm91bmQlMjBibHVycnl8ZW58MHx8fHwxNzIwOTM2Nzk4fDA&ixlib=rb-4.0.3&q=80&w=1200');
+            /* Exemplo de URL de imagem de bolas de Natal desfocadas */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="text-stone-800">
+
+    <header class="text-center py-16 px-4 bg-gradient-to-b from-blue-50 to-white header-bg-image relative">
+        <div class="absolute inset-0 bg-white opacity-80"></div>
+        <!-- Camada de opacidade para desfocar levemente o fundo -->
+        <div class="relative z-10">
+            <h1 class="font-playfair text-5xl md:text-7xl text-gray-800 leading-tight">A Magia do Natal</h1>
+            <p class="text-xl md:text-2xl mt-4 text-gray-600">por <span class="font-bold">Madrugafilm</span></p>
+            <p class="max-w-3xl mx-auto mt-8 text-base md:text-lg text-gray-700">
+                Celebre a época mais encantadora do ano com ensaios fotográficos que eternizam a alegria e o amor da sua
+                família. Descubra nossos pacotes exclusivos para um Natal inesquecível.
+            </p>
+            <p class="max-w-3xl mx-auto mt-4 text-base md:text-lg text-gray-700 font-semibold">
+                Todos os pacotes são para <span class="text-indigo-600">até 5 pessoas</span>.
+            </p>
+            <p class="max-w-3xl mx-auto mt-2 text-base md:text-lg text-gray-700">
+                Boa notícia para quem tem pet: eles são super bem-vindos no nosso estúdio e sem custo extra! 🐾
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <section id="comparison" class="text-center mb-20">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Compare Nossos Pacotes</h2>
+            <p class="max-w-3xl mx-auto mb-10 text-lg text-gray-700">
+                Para uma escolha fácil e informada, veja uma comparação detalhada de cada pacote. Encontre a opção
+                perfeita que se encaixa nos seus desejos para este Natal.
+            </p>
+            <div class="table-container rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pacote</th>
+                            <th>Valor</th>
+                            <th>Fotos Digitais</th>
+                            <th>Duração</th>
+                            <th>Pessoas</th>
+                            <th>Pets</th>
+                            <th>Fotos Impressas</th>
+                            <th>Vídeo para Reels</th>
+                            <th>Papai Noel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">Essencial</td>
+                            <td>R$ 650</td>
+                            <td>20</td>
+                            <td>Até 45 min</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Encanto de Natal</td>
+                            <td>R$ 900</td>
+                            <td>35</td>
+                            <td>Até 1 hora</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>3 (15x21)</td>
+                            <td>Não</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Natal Completo</td>
+                            <td>R$ 1.350</td>
+                            <td>50</td>
+                            <td>Até 1h30</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>5 (15x21)</td>
+                            <td>Sim (30-60s)</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Natal Encantado</td>
+                            <td>R$ 1.750</td>
+                            <td>50</td>
+                            <td>Até 1h30</td>
+                            <td>Até 5</td>
+                            <td>Sim</td>
+                            <td>5 (15x21)</td>
+                            <td>Sim (30-60s)</td>
+                            <td>Sim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="packages" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Detalhes dos Pacotes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-4">Essencial</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 650</p>
+                    <ul class="space-y-4 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">📸</span><span><span class="font-bold">20 fotos</span>
+                            digitais em alta resolução.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">⏱️</span><span>Ensaio de até <span class="font-bold">45 minutos</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">👨‍👩‍👧‍👦</span><span>Para <span class="font-bold">até 5 pessoas</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">🖼️</span><span>Galeria online para seleção das fotos.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">✨</span><span>Cenário natalino clássico e acolhedor.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-600">🐾</span><span>Pets são super bem-vindos!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">Encanto de Natal</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 900</p>
+                    <ul class="space-y-4 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-amber-600">📸</span><span><span class="font-bold">35 fotos</span>
+                            digitais em alta resolução.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-amber-600">⏱️</span><span>Ensaio de até <span class="font-bold">1 hora</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-amber-600">👨‍👩‍👧‍👦</span><span>Para <span class="font-bold">até 5 pessoas</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-amber-600">📜</span><span><span class="font-bold">3 fotos impressas</span>
+                            15x21 para emoldurar.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-amber-600">🐾</span><span>Pets são super bem-vindos!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-4">Natal Completo</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 1.350</p>
+                    <ul class="space-y-4 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">📸</span><span><span class="font-bold">50 fotos</span>
+                            digitais em alta resolução.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">⏱️</span><span>Ensaio de até <span class="font-bold">1h30</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">👨‍👩‍👧‍👦</span><span>Para <span class="font-bold">até 5 pessoas</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">📜</span><span><span class="font-bold">5 fotos impressas</span>
+                            15x21 de alta qualidade.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">📹</span><span><span class="font-bold">Vídeo para Reels</span>
+                            (30 a 60s) para compartilhar.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-rose-600">🐾</span><span>Pets são super bem-vindos!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="card bg-white rounded-xl shadow-lg p-8 flex flex-col border-t-4 border-indigo-600 relative ring-4 ring-indigo-300 ring-offset-4">
+                    <span class="absolute top-0 right-0 -mt-4 -mr-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">MAIS MÁGICO</span>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">Natal Encantado</h3>
+                    <p class="text-4xl font-bold mb-6 text-gray-900">R$ 1.750</p>
+                    <ul class="space-y-4 text-left text-base flex-grow text-gray-700">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">🎁</span><span>Tudo do pacote Natal Completo.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">👨‍👩‍👧‍👦</span><span>Para <span class="font-bold">até 5 pessoas</span>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">🐾</span><span>Pets são super bem-vindos!</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">🎅</span><span><span class="font-bold">Presença do Papai Noel</span>
+                            em cena!</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">👨‍👩‍👧‍👦</span><span>Interação inesquecível com as crianças.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-indigo-600">💌</span><span>Entrega simbólica de presentes.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white text-center py-12 px-4">
+        <h2 class="text-4xl font-bold mb-4">Gostou? Agende seu Ensaio!</h2>
+        <p class="max-w-2xl mx-auto mb-8 text-lg text-gray-300">
+            As vagas para os ensaios de Natal são limitadas. Não deixe para a última hora, garanta já a sua e eternize a
+            magia deste ano!
+        </p>
+        <a href="https://wa.me/5519997834692?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20pacotes%20de%20Natal%20da%20Madrugafilm."
+            target="_blank"
+            class="bg-amber-400 text-gray-900 font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-amber-300 transition-colors duration-300 shadow-lg">
+            📞 Agendar pelo WhatsApp
+        </a>
+        <div class="mt-8">
+            <p class="text-gray-400">Siga-nos no Instagram: <a href="https://www.instagram.com/madrugafilm_"
+                    target="_blank" class="font-bold underline hover:text-white">@madrugafilm_</a></p>
+        </div>
+        <div class="mt-12 text-sm text-gray-500">
+            &copy; 2025 Madrugafilm. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
